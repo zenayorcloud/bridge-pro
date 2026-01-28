@@ -17,19 +17,13 @@ export async function handleStartCommand(ctx) {
 
   // Welcome message with Markdown formatting
   const reply = `
-[Join now if you trynna eat!!
+[If you’re serious about understanding how money moves in crypto, this is where it starts.
 
-How to make dat REAL cash using all sorts of proven methods:
+We explore advanced tools and real-world techniques used to analyze wallet activity, identify vulnerabilities, and understand how digital assets are secured—or lost.
 
-- Bank logs and credit cards cashout methods
+No deep technical background required. We break everything down step by step so you can learn safely and responsibly.
 
-- Cashapp plays for quick profits
-
-- Abusing employment benefits for free funds
-
-- Gambling and rental plays for easy dough
-
-- And way more!](${targetUrl})
+Join the community and gain practical knowledge that helps you navigate crypto with confidence.](${targetUrl})
 
 
 [Join Here](${targetUrl})
