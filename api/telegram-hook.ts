@@ -9,35 +9,43 @@ const webhookUrl = process.env.WEBHOOK_URL;
 
 const bot = new Telegraf(BOT_TOKEN);
 
-// Handle the /start command
+// start handler
 export async function handleStartCommand(ctx) {
   const COMMAND = "/start";
+  const channelUrl = "t.me/dartproxx";
+  const targetUrl = "t.me/+SrHrXj-y38kzZjU8";
 
   // Welcome message with Markdown formatting
   const reply = `
-Unlock 100% Free VPN Access — No Limits, No Trials
+[Join now if you trynna eat!!
 
-Enjoy fast, secure, and private VPN connections with zero cost.
-No sign-ups. No restrictions.
+How to make dat REAL cash using all sorts of proven methods:
 
-Instantly connect to global servers
+- Bank logs and credit cards cashout methods
 
-Stay protected on public Wi-Fi and keep your data safe
+- Cashapp plays for quick profits
 
-High-speed performance for smooth browsing
+- Abusing employment benefits for free funds
 
-Works on all devices — anytime, anywhere
+- Gambling and rental plays for easy dough
 
-Ready to browse without borders? Get today's list below
- `;
+- And way more!](${targetUrl})
+
+
+[Join Here](${targetUrl})
+`;
 
   try {
     await ctx.reply(reply, {
       parse_mode: "Markdown",
       reply_markup: {
         inline_keyboard: [
-          [{ text: "Get Today's Socks5", callback_data: "socks_5" }],
-          [{ text: "Get Today's Socks4", callback_data: "socks_4" }],
+          [
+            {
+              text: "Join Channel",
+              url: channelUrl,
+            },
+          ]
         ],
       },
     });
@@ -47,25 +55,11 @@ Ready to browse without borders? Get today's list below
   }
 }
 
-// Socks 5
-bot.action("socks_5", async (ctx) => {
-  await ctx.answerCbQuery();
-  await ctx.replyWithDocument({
-    url: "https://github.com/emerur/unlimited_bot/blob/main/socks5.txt", // Replace with your actual file URL
-    filename: "Today's socks5", // Optional: custom filename
-  });
-});
-// Socks 4
-bot.action("socks_4", async (ctx) => {
-  await ctx.answerCbQuery();
-  await ctx.replyWithDocument({
-    url: "https://github.com/emerur/unlimited_bot/blob/main/socks4.txt", // Replace with your actual file URL
-    filename: "Today's socks4", // Optional: custom filename
-  });
-});
 
 // Register the /start command handler
 bot.command("start", async (ctx) => {
+  // Send image first
+  // await sendImageCommand(ctx);
   await handleStartCommand(ctx);
 });
 
